@@ -28,11 +28,11 @@ namespace Domain.Services
             AddTags(tagsToBeAdded);
         }
 
-        private void AddTags(IEnumerable<string> tagsPorAñadir)
+        private void AddTags(IEnumerable<string> tagsToBeAdded)
         {
-            foreach (var tagPorAñadir in tagsPorAñadir)
+            foreach (var tagToBeAdded in tagsToBeAdded)
             {
-                var tag = GetOrCreateTag(tagPorAñadir);
+                var tag = GetOrCreateTag(tagToBeAdded);
                 _entity.Tags.Add(tag);
             }
         }
