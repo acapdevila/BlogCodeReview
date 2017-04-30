@@ -1,0 +1,57 @@
+﻿@model Web.ViewModels.Posts.PostDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<br />
+<div class="row">
+    <!-- Blog Post Content Column -->
+    <div class="col-lg-8">
+        <!-- Blog Post -->
+        @*@Html.DisplayFor(m => m, "DisplayPost")*@
+     </div>
+
+    @*@Html.Partial("_SidebarPrincipal")*@
+
+</div>
+<!-- /.row -->
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+      
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slug)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slug)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatePost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatePost)
+        </dd>
+        
+     
+
+        
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Posts list", "Index")
+</p>
