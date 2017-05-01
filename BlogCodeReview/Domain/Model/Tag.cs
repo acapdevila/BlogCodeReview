@@ -4,8 +4,6 @@ namespace Domain.Model
 {
     public class Tag
     {
-        public static readonly char TagSeparator = ';';
-
         public Tag()
         {
             Posts = new List<Post>();

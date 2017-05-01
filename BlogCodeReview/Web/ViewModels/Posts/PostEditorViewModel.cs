@@ -12,6 +12,8 @@ namespace Web.ViewModels.Posts
     {
         private string _urlSlug;
 
+        public static readonly char TagSeparator = ';';
+
         public PostEditorViewModel()
         {
             
@@ -72,7 +74,7 @@ namespace Web.ViewModels.Posts
             postEditorDto.InjectFrom(postEditorViewModel);
             postEditorDto.HtmlContent = postEditorViewModel.ContentHtml;
 
-            foreach (var tagName in postEditorViewModel.Tags.Split(Tag.TagSeparator).ToList())
+            foreach (var tagName in postEditorViewModel.Tags.Split(PostEditorViewModel.TagSeparator).ToList())
             {
                 postEditorDto.Tags.Add(tagName);
             }
