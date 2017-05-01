@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using CSharpFunctionalExtensions;
 using Data;
 using Domain.Dtos;
 using Domain.Model;
@@ -11,12 +12,12 @@ namespace Services
     public class PostsService
     {
         private readonly DatabaseContext _db;
-        private readonly TagMapper _asignadorTags;
+        private readonly TagMapper _tagMapper;
 
-        public PostsService(DatabaseContext db, TagMapper asignadorTags)
+        public PostsService(DatabaseContext db, TagMapper tagMapper)
         {
             _db = db;
-            _asignadorTags = asignadorTags;
+            _tagMapper = tagMapper;
         }
 
         public IQueryable<Post> Posts()
@@ -31,20 +32,45 @@ namespace Services
                         .FirstOrDefaultAsync(m => m.Id == id);
         }
 
-        public async Task CreatePost(PostEditorDto editorPost)
+        public async Task<Result> CreatePost(PostEditorDto editorPost)
         {
-            var post = Post.CreateNewDefaultPost(editorPost.Autor);
-            post.CopyValues(editorPost, _asignadorTags);
+            var createPostResult = Post.Create(editorPost);
+
+            if (createPostResult.IsFailure)
+            {
+                return createPostResult;
+            }
+
+            Post post = createPostResult.Value;
+
+            _tagMapper.MapTagsToEntity(post, editorPost.Tags);
+
             _db.Posts.Add(post);
             await _db.SaveChangesAsync();
+
             editorPost.Id = post.Id;
+
+            return Result.Ok();
         }
 
-        public async Task UpdatePost(PostEditorDto editorPost)
+        public async Task<Result> UpdatePost(PostEditorDto editorPost)
         {
-            var post = await GetPostById(editorPost.Id);
-            post.CopyValues(editorPost, _asignadorTags);
+            var validationPostResult = Post.Validate(editorPost);
+
+            if (validationPostResult.IsFailure)
+            {
+                return validationPostResult;
+            }
+
+            Post post = await GetPostById(editorPost.Id);
+
+            post.MapEditorValues(editorPost);
+
+            _tagMapper.MapTagsToEntity(post, editorPost.Tags);
+
             await _db.SaveChangesAsync();
+
+            return Result.Ok();
         }
 
         public async Task DeletePost(int id)
