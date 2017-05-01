@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSharpFunctionalExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSharpFunctionalExtensions.1.7.1\lib\netstandard1.0\CSharpFunctionalExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -199,6 +203,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery.datetimepicker.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -443,6 +448,80 @@
     <Content Include="Scripts\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
     <Content Include="Scripts\ckeditor\plugins\smiley\images\wink_smile.gif" />
     <Content Include="Scripts\ckeditor\plugins\smiley\images\wink_smile.png" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\dialogs\sourcedialog.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\icons\hidpi\sourcedialog-rtl.png" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\icons\hidpi\sourcedialog.png" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\icons\sourcedialog-rtl.png" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\icons\sourcedialog.png" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\af.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\ar.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\bn.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\bs.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\da.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\de-ch.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\de.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\el.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\en-au.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\en-ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\en-gb.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\en.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\es.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\et.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\eu.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\fo.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\fr-ca.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\gl.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\gu.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\he.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\hi.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\hu.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\id.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\is.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\it.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\ja.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\ka.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\km.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\ko.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\ku.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\lt.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\lv.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\mn.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\ms.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\no.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\oc.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\pt.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\ro.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\ru.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\si.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\sk.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\sl.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\sq.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\sr-latn.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\sr.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\sv.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\th.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\tt.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\lang\zh.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\plugin.js" />
+    <Content Include="Scripts\ckeditor\plugins\sourcedialog\samples\sourcedialog.html" />
     <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
     <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
     <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\lang\az.js" />
@@ -549,6 +628,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.datetimepicker.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />

@@ -65,12 +65,8 @@
     <div class="container">
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <div class="navbar-form navbar-left">
-                    @Html.LabelFor(model => model.DatePost)
-                    @Html.EditorFor(model => model.DatePost, "DatetimePicker")
-                </div>
                 <input id="btnGuardarYSalir" name="boton" type="submit" value="Save and exit" class="btn btn-default navbar-btn"/>&nbsp;&nbsp;
-                <input id="btnGuardar" name="boton" type="button" value="Save" class="btn btn-primary navbar-btn"/>
+                @*<input id="btnGuardar" name="boton" type="button" value="Save" class="btn btn-primary navbar-btn"/>*@
             </li>
         </ul>
     </div>
@@ -80,24 +76,24 @@
 {
     <script type="text/javascript">
 
-        $(document).ready(function() {
-            jQuery.validator.setDefaults({ ignore: [] });
+        //$(document).ready(function() {
+        //    jQuery.validator.setDefaults({ ignore: [] });
 
-            $("#btnGuardar").click(function(event) {
+        //    $("#btnGuardar").click(function(event) {
 
-                $(this).val('Saving...')
-                    .prop('disabled', true);;
+        //        $(this).val('Saving...')
+        //            .prop('disabled', true);;
 
-                event.preventDefault();
+        //        event.preventDefault();
 
-                for (instance in CKEDITOR.instances) {
-                    CKEDITOR.instances[instance].updateElement();
-                }
+        //        for (instance in CKEDITOR.instances) {
+        //            CKEDITOR.instances[instance].updateElement();
+        //        }
 
-                Save();
-            });
+        //        Save();
+        //    });
 
-        });
+        //});
 
         function Save() {
             $.ajax({

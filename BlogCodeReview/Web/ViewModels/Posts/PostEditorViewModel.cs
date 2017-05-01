@@ -12,10 +12,15 @@ namespace Web.ViewModels.Posts
     {
         private string _urlSlug;
 
+        public PostEditorViewModel()
+        {
+            
+        }
+
         public PostEditorViewModel(Post post)
         {
             this.InjectFrom(post);
-
+            ContentHtml = post.HtmlContent;
             Tags = string.Join(" ", post.Tags.Select(m => m.Name));
         }
 
@@ -65,6 +70,13 @@ namespace Web.ViewModels.Posts
         {
             var postEditorDto = new PostEditorDto();
             postEditorDto.InjectFrom(postEditorViewModel);
+            postEditorDto.HtmlContent = postEditorViewModel.ContentHtml;
+
+            foreach (var tagName in postEditorViewModel.Tags.Split(Tag.TagSeparator).ToList())
+            {
+                postEditorDto.Tags.Add(tagName);
+            }
+
             return postEditorDto;
         }
     }

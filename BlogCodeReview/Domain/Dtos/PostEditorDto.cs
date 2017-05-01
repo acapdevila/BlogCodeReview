@@ -5,6 +5,11 @@ namespace Domain.Dtos
 {
     public class PostEditorDto
     {
+
+        public PostEditorDto()
+        {
+            Tags = new List<string>();
+        }
         public int Id { get; set; }
         public string Subtitle { get; set; }
         

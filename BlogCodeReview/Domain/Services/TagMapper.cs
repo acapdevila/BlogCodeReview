@@ -72,6 +72,11 @@ namespace Domain.Services
 
         private List<Tag> GetTagsToBeDeleted(List<string> listaTags)
         {
+            if (listaTags == null)
+            {
+                return _entity.Tags.ToList();
+            }
+
             return _entity.Tags.Where(m => !listaTags.Contains(m.Name)).ToList();
         }
     }

@@ -47,6 +47,7 @@ namespace Web.Controllers
                         Id = m.Id,
                         TagList = m.Tags
                     })
+                    .OrderByDescending(m=>m.Id)
                     .ToPagedList(page, pageSize: 100)
             };
 
@@ -90,8 +91,12 @@ namespace Web.Controllers
                 return View(viewModel);
             }
 
+            var createPostResult =  await _postsServicio.CreatePost(viewModel.ToPostEditorDto());
 
-            await _postsServicio.CreatePost(viewModel.ToPostEditorDto());
+            if (createPostResult.IsFailure)
+            {
+                ModelState.AddModelError("*", createPostResult.Error);
+            }
 
             if (boton.ToLower().Contains(@"exit"))
             {
@@ -129,7 +134,12 @@ namespace Web.Controllers
                 return View(viewModel);
             }
 
-            await _postsServicio.UpdatePost(viewModel.ToPostEditorDto());
+            var updatePostResult = await _postsServicio.UpdatePost(viewModel.ToPostEditorDto());
+
+            if (updatePostResult.IsFailure)
+            {
+                ModelState.AddModelError("*", updatePostResult.Error);
+            }
 
             return RedirectToAction("Index");
         }
